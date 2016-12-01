@@ -1,0 +1,21 @@
+{
+  "name": "hapi-locate",
+  "version": "0.0.1",
+  "description": "Provide location services to hapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/xo && ./node_modules/.bin/lab"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "code": "^4.0.0",
+    "hapi": "^16.0.1",
+    "lab": "^11.2.1",
+    "xo": "^0.17.1"
+  },
+  "xo": {},
+  "dependencies": {
+    "axios": "^0.15.3"
+  }
+}
