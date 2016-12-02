@@ -1,6 +1,6 @@
 {
   "name": "hapi-locate",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Provide location services to hapi",
   "main": "index.js",
   "scripts": {

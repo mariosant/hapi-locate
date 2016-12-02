@@ -19,10 +19,65 @@ function (request, reply) {
 }
 ```
 
+There is good chance you won't want to do that for every single route, so there are two ways to load it on demand.
+
+First way:
+```javascript
+server.register({
+    register: require('hapi-locate'),
+    options: {
+        disableByDefault: true
+    }
+}, err => {
+    done(err);
+});
+
+// and later in a route
+const route = {
+    path: '/',
+	method: 'GET',
+	handler: function (request, reply) {
+		reply(request.location);
+	},
+    config: {
+        plugins: {
+            hapiLocate: {
+                enabled: true
+            }
+        }
+    }
+};
+```
+
+Second way:
+```javascript
+server.register({
+    register: require('hapi-locate'),
+}, err => {
+    done(err);
+});
+
+// and later in a route
+const route = {
+    path: '/',
+	method: 'GET',
+	handler: function (request, reply) {
+		reply();
+	},
+    config: {
+        plugins: {
+            hapiLocate: {
+                enabled: false
+            }
+        }
+    }
+};
+```
+
 Roadmap:
 
 * Use api key for ipinfo.io
-* Provide a way to enable/disable on specific routes on demand
+* ~~Provide a way to enable/disable on specific routes on demand~~
 * Customize available information
 
 Feel free to submit feature requests and to report any issues.
