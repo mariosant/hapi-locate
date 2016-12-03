@@ -20,6 +20,9 @@ const register = function (server, registrationOptions, next) {
 				.then(response => {
 					request.location = response.data;
 					reply.continue();
+				})
+				.catch(err => {
+					request.location = {error: err.code};
 				});
 		} else {
 			reply.continue();

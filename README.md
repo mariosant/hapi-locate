@@ -78,6 +78,7 @@ Roadmap:
 
 * Use api key for ipinfo.io
 * ~~Provide a way to enable/disable on specific routes on demand~~
+* Provide server method to geocode
 * Customize available information
 
 Feel free to submit feature requests and to report any issues.
